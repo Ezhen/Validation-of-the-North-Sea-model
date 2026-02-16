@@ -4,6 +4,9 @@ from netCDF4 import Dataset
 from mpl_toolkits.basemap import Basemap
 from scipy import spatial
 
+# The script plots simulation results for carbon remineralization in the upper 10cm of the marine sediments.
+# Against field campaign results from De Borger 2021.
+
 moment = 4  # once per month sample -> May sample has index 4 (normally 145,157 Julian range)
 
 flag = 'atm3'         #'_extremeWilson
