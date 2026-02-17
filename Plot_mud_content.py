@@ -11,6 +11,12 @@ from plotbcz import *
 import matplotlib as mpl
 import cmocean.cm as cm
 
+# the script plots mud content over the NS sediments
+# i distinct 10% and 30% as the perennial states (below - noncohesive, above - cohesive)
+# in the early versions of ROMS modifications there was a distinction for processes 
+# based on "cohesiveness" of the sediments. Anyway, we don't need to see the difference
+# between 60% and 70%, only to locate the mud fields
+
 year = 2009
 file2 = path + '/Hindcast_CE2COAST_RST_2003_2c_atm3.nc' 
 
