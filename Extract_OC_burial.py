@@ -20,7 +20,7 @@ yrange = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2011,2012,   2021,20
 
 for y in yrange: 
 
-	nc0 = Dataset('/scratch/ulg/mast/eivanov/Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_%s_2c_atm3.nc' %(y), 'r', format='NETCDF4')
+	nc0 = Dataset('./Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_%s_2c_atm3.nc' %(y), 'r', format='NETCDF4')
 
 	if y == yrange[0]:
 		seq = np.zeros(np.shape(nc0.variables['h']))
