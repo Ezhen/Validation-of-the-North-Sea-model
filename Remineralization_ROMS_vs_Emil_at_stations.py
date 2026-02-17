@@ -126,6 +126,6 @@ ax.legend(loc='best')
 ax.set_ylabel('%')
 ax.autoscale_view()
 
-fig.savefig("/home/users/e/i/eivanov/Validation/Climatological_range/Figures/Carbon_remineralization_percent_%s_%s.png" %(flag,down), dpi=300, bbox_inches='tight')
+fig.savefig("./Figures/Carbon_remineralization_percent_%s_%s.png" %(flag,down), dpi=300, bbox_inches='tight')
 
 
