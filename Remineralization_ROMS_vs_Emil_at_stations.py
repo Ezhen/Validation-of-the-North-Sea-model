@@ -23,8 +23,8 @@ Denitr_Emil = np.array([0.29,0.1,0.04,0.25,0.18,0.48,0.18,0.32,1.06,0.46,0.54])
 Anoxic_Emil = np.array([2.0,1.19,2.83,1.44,3.03,3.21,3.38,1.37,1.21,1.29,1.65])
 
 # Acquire base data from ROMS simulations
-nc = Dataset('/scratch/ulg/mast/eivanov/Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_2010_2c_%s.nc' %(flag), 'r', format='NETCDF4')
-nc2 = Dataset('/scratch/ulg/mast/eivanov/Output/CE2COAST_2006/Hindcast_CE2COAST_RST_2010_2c_%s.nc' %(flag), 'r', format='NETCDF4')
+nc = Dataset('./Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_2010_2c_%s.nc' %(flag), 'r', format='NETCDF4')
+nc2 = Dataset('./Output/CE2COAST_2006/Hindcast_CE2COAST_RST_2010_2c_%s.nc' %(flag), 'r', format='NETCDF4')
 lats = nc.variables['lat_rho'][:]
 lons = nc.variables['lon_rho'][:]
 mask = nc.variables['mask_rho'][:]
@@ -39,7 +39,7 @@ years = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2021,2022,2
 Oxic_Roms,Denitr_Roms,Anoxic_Roms = np.zeros((len(years),10)),np.zeros((len(years),10)),np.zeros((len(years),10))
 
 for y in range(len(years)):
-	nc = Dataset('/scratch/ulg/mast/eivanov/Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_%s_2c_%s.nc' %(years[y],flag), 'r', format='NETCDF4')
+	nc = Dataset('./Output/CE2COAST_2006/Hindcast_CE2COAST_HIS_%s_2c_%s.nc' %(years[y],flag), 'r', format='NETCDF4')
 	for i in range(len(lat)-1):
 		# standard routine to locate the closest ROMS routine
 		idxx,a,b = 0,0,-1
@@ -99,7 +99,7 @@ ax.legend(loc='best')
 ax.set_ylabel('mmol C m-2 d-1')
 ax.autoscale_view()
 
-fig.savefig("/home/users/e/i/eivanov/Validation/Climatological_range/Figures/Carbon_remineralization_%s_%s.png"  %(flag,down), dpi=300, bbox_inches='tight')
+fig.savefig("./Figures/Carbon_remineralization_%s_%s.png"  %(flag,down), dpi=300, bbox_inches='tight')
 
 
 # Carbon remineralization (%)
